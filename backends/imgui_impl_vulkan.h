@@ -43,6 +43,7 @@
 #if defined(IMGUI_IMPL_VULKAN_NO_PROTOTYPES) && !defined(VK_NO_PROTOTYPES)
 #define VK_NO_PROTOTYPES
 #endif
+#undef VK_NO_PROTOTYPES
 #include <vulkan/vulkan.h>
 
 // Initialization data, for ImGui_ImplVulkan_Init()
@@ -60,14 +61,15 @@ struct ImGui_ImplVulkan_InitInfo
     uint32_t                        MinImageCount;          // >= 2
     uint32_t                        ImageCount;             // >= MinImageCount
     VkSampleCountFlagBits           MSAASamples;            // >= VK_SAMPLE_COUNT_1_BIT (0 -> default to VK_SAMPLE_COUNT_1_BIT)
+    VkFormat                        BackbufferFormat;
     const VkAllocationCallbacks*    Allocator;
     void                            (*CheckVkResultFn)(VkResult err);
 };
 
 // Called by user code
-IMGUI_IMPL_API bool         ImGui_ImplVulkan_Init(ImGui_ImplVulkan_InitInfo* info, VkRenderPass render_pass);
+IMGUI_IMPL_API bool         ImGui_ImplVulkan_Init(ImGui_ImplVulkan_InitInfo* info);
 IMGUI_IMPL_API void         ImGui_ImplVulkan_Shutdown();
-IMGUI_IMPL_API void         ImGui_ImplVulkan_NewFrame();
+IMGUI_IMPL_API void         ImGui_ImplVulkan_NewFrame(VkCommandBuffer);
 IMGUI_IMPL_API void         ImGui_ImplVulkan_RenderDrawData(ImDrawData* draw_data, VkCommandBuffer command_buffer, VkPipeline pipeline = VK_NULL_HANDLE);
 IMGUI_IMPL_API bool         ImGui_ImplVulkan_CreateFontsTexture(VkCommandBuffer command_buffer);
 IMGUI_IMPL_API void         ImGui_ImplVulkan_DestroyFontUploadObjects();
@@ -119,7 +121,6 @@ struct ImGui_ImplVulkanH_Frame
     VkFence             Fence;
     VkImage             Backbuffer;
     VkImageView         BackbufferView;
-    VkFramebuffer       Framebuffer;
 };
 
 struct ImGui_ImplVulkanH_FrameSemaphores
@@ -138,7 +139,6 @@ struct ImGui_ImplVulkanH_Window
     VkSurfaceKHR        Surface;
     VkSurfaceFormatKHR  SurfaceFormat;
     VkPresentModeKHR    PresentMode;
-    VkRenderPass        RenderPass;
     VkPipeline          Pipeline;               // The window pipeline may uses a different VkRenderPass than the one passed in ImGui_ImplVulkan_InitInfo
     bool                ClearEnable;
     VkClearValue        ClearValue;
