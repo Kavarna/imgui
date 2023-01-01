@@ -1630,7 +1630,7 @@ static void ImGui_ImplVulkan_RenderWindow(ImGuiViewport* viewport, void*)
             VkRenderingAttachmentInfo attachmentInfo{};
             {
                 attachmentInfo.sType = VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO;
-                attachmentInfo.imageLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+                attachmentInfo.imageLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
                 attachmentInfo.imageView = fd->BackbufferView;
                 attachmentInfo.loadOp = (viewport->Flags & ImGuiViewportFlags_NoRendererClear) ? VK_ATTACHMENT_LOAD_OP_DONT_CARE : VK_ATTACHMENT_LOAD_OP_CLEAR;
                 attachmentInfo.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
