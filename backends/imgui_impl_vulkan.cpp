@@ -177,12 +177,10 @@ static bool g_FunctionsLoaded = true;
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreateCommandPool) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreateDescriptorSetLayout) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreateFence) \
-    IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreateFramebuffer) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreateGraphicsPipelines) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreateImage) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreateImageView) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreatePipelineLayout) \
-    IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreateRenderPass) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreateSampler) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreateSemaphore) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkCreateShaderModule) \
@@ -191,12 +189,10 @@ static bool g_FunctionsLoaded = true;
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroyCommandPool) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroyDescriptorSetLayout) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroyFence) \
-    IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroyFramebuffer) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroyImage) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroyImageView) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroyPipeline) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroyPipelineLayout) \
-    IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroyRenderPass) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroySampler) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroySemaphore) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkDestroyShaderModule) \
@@ -219,8 +215,6 @@ static bool g_FunctionsLoaded = true;
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkUpdateDescriptorSets) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkGetPhysicalDeviceSurfaceSupportKHR) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkWaitForFences) \
-    IMGUI_VULKAN_FUNC_MAP_MACRO(vkCmdBeginRenderPass) \
-    IMGUI_VULKAN_FUNC_MAP_MACRO(vkCmdEndRenderPass) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkQueuePresentKHR) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkBeginCommandBuffer) \
     IMGUI_VULKAN_FUNC_MAP_MACRO(vkEndCommandBuffer) \

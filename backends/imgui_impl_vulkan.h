@@ -43,7 +43,6 @@
 #if defined(IMGUI_IMPL_VULKAN_NO_PROTOTYPES) && !defined(VK_NO_PROTOTYPES)
 #define VK_NO_PROTOTYPES
 #endif
-#undef VK_NO_PROTOTYPES
 #include <vulkan/vulkan.h>
 
 // Initialization data, for ImGui_ImplVulkan_Init()
